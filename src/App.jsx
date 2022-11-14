@@ -6,7 +6,7 @@ import { Heading } from "@chakra-ui/react";
 import { io } from "socket.io-client";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 function App() {
-  const [count, setCount] = useState(0);
+  // const socket = io('/');
 
   return (
     <div className="App">
@@ -20,10 +20,25 @@ function App() {
       </div>
       <Heading>Socket IO Playground</Heading>
       <div className="card">
-        <Button colorScheme="teal" size="md">
+        <Button
+          colorScheme="teal"
+          size="md"
+          onClick={() => {
+            // socket.on("connect", () => {
+            //   console.log(socket.id); // x8WIv7-mJelg7on_ALbx
+            // });
+          }}
+        >
           连接
         </Button>
-        <Button colorScheme="teal" size="md">
+        <Button
+          colorScheme="orange"
+          size="md"
+          onClick={() => {
+            // socket.disconnect()
+            console.log('something happened')
+          }}
+        >
           停止
         </Button>
       </div>
